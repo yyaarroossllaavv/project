@@ -1,19 +1,35 @@
 package org.example;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        ex1 ex_1 = new ex1();
+        ex3 ex_2 = new ex3();
+        ex4 ex_3 = new ex4();
+        ex5 ex_4 = new ex5();
+        ex8 ex_5 = new ex8();
+        ex10_12 ex_6 = new ex10_12(); //номер задания не совпадает с номером в названии класса для удобства
+        ArrayList<exercises> array = new ArrayList<>();
+        array.add(ex_1);
+        array.add(ex_2);
+        array.add(ex_3);
+        array.add(ex_4);
+        array.add(ex_5);
+        array.add(ex_6);
+        Scanner scanner = new Scanner(System.in);
+        int i = 0;
+        while (true) {
+            System.out.println("Введите номер задания(от 1 до 6): ");
+            i = scanner.nextInt();
+            if (i >= 1 && i <= 6) {
+                array.get(i - 1).getResponse();
+            }
+            else {
+                System.out.println("Такого задания нет.");
+                break;
+            }
         }
     }
 }
